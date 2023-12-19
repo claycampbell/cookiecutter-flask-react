@@ -1,5 +1,5 @@
 [run]
-source={{ cookiecutter.app_module }}
+source=example_app
 [report]
 omit =
     */python?.?/*

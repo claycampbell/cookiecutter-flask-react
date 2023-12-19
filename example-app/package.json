@@ -1,9 +1,9 @@
 {
-  "name": "{{ cookiecutter.app_slug }}",
+  "name": "example-app",
   "version": "0.1.0",
   "scripts": {
-    "build": "parcel build {{ cookiecutter.app_module }}/static/index.js -d {{ cookiecutter.app_module }}/static/dist",
-    "watch": "parcel watch {{ cookiecutter.app_module }}/static/index.js -d {{ cookiecutter.app_module }}/static/dist",
+    "build": "parcel build example_app/static/index.js -d example_app/static/dist",
+    "watch": "parcel watch example_app/static/index.js -d example_app/static/dist",
     "test": "jest"
   },
   "devDependencies": {

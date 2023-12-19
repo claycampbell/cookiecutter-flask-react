@@ -35,7 +35,7 @@ RUN cd /usr/src/app && \
 FROM jsdev as builder
 
 # Add JS source
-COPY ./{{ cookiecutter.app_module }}/static /usr/src/app/{{ cookiecutter.app_module }}/static
+COPY ./example_app/static /usr/src/app/example_app/static
 # Build production JS assets
 RUN npm run build
 
@@ -44,12 +44,12 @@ RUN npm run build
 FROM base as production
 
 # Add app source
-COPY ./{{ cookiecutter.app_module }} /usr/src/app/{{ cookiecutter.app_module }}
+COPY ./example_app /usr/src/app/example_app
 # Add built production JS assets
-COPY --from=builder /usr/src/app/{{ cookiecutter.app_module }}/static/dist /usr/src/app/{{ cookiecutter.app_module }}/static/dist
+COPY --from=builder /usr/src/app/example_app/static/dist /usr/src/app/example_app/static/dist
 
 ENV WEB_CONCURRENCY 1
 WORKDIR /usr/src/app
 EXPOSE 8080
 USER nobody
-CMD ["gunicorn", "-b", "0.0.0.0:8080", "--access-logfile", "-", "{{ cookiecutter.app_module }}:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:8080", "--access-logfile", "-", "example_app:app"]

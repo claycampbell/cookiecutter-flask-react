@@ -1,7 +1,7 @@
 # Application module name
-APP_NAME:={{ cookiecutter.app_module }}
+APP_NAME:=example_app
 # Docker image name and tag
-IMAGE:={{ cookiecutter.docker_image }}
+IMAGE:=myapp
 TAG?=latest
 # Shell that make should use
 SHELL:=bash

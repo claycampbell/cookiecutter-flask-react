@@ -1,6 +1,6 @@
-# {{ cookiecutter.app_name }}
+# Example App
 
-{{ cookiecutter.app_description }}
+Example App is a Flask+React web app
 
 Build Docker images with Python and JavaScript dev/test requirements installed.
 
